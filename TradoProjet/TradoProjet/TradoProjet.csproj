@@ -1,0 +1,153 @@
+﻿<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <TargetFramework>netstandard20</TargetFramework>
+  </PropertyGroup>
+
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|AnyCPU'">
+    <DebugType>pdbonly</DebugType>
+    <DebugSymbols>true</DebugSymbols>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <None Remove="Assets\Images\TradoLogoImage.png" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <EmbeddedResource Include="Assets\Images\TradoLogoImage.png" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <PackageReference Include="Microsoft.Azure.Mobile.Client" Version="4.0.2" />
+    <PackageReference Include="sqlite-net-pcl" Version="1.5.231" />
+    <PackageReference Include="Xam.Plugin.Media" Version="4.0.1.5" />
+    <PackageReference Include="Xamarin.Forms.Maps" Version="3.2.0.871581" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Compile Update="Properties\Resources.Designer.cs">
+      <DesignTime>True</DesignTime>
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Resources.resx</DependentUpon>
+    </Compile>
+    <Compile Update="Trado.xaml.cs">
+      <DependentUpon>Trado.xaml</DependentUpon>
+    </Compile>
+    <Compile Update="PagePrincipale.xaml.cs">
+      <DependentUpon>PagePrincipale.xaml</DependentUpon>
+    </Compile>
+  </ItemGroup>
+
+  <ItemGroup>
+    <EmbeddedResource Update="PageAjouterObjet.xaml">
+      <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
+    </EmbeddedResource>
+    <EmbeddedResource Update="PageDonner.xaml">
+      <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
+    </EmbeddedResource>
+    <EmbeddedResource Update="PageEchanges.xaml">
+      <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
+    </EmbeddedResource>
+    <EmbeddedResource Update="PageEchangesEtOffres.xaml">
+      <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
+    </EmbeddedResource>
+    <EmbeddedResource Update="PageInscription.xaml">
+      <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
+    </EmbeddedResource>
+    <EmbeddedResource Update="PageMaison.xaml">
+      <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
+    </EmbeddedResource>
+    <EmbeddedResource Update="PageMessages.xaml">
+      <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
+    </EmbeddedResource>
+    <EmbeddedResource Update="PageNouveauMessage.xaml">
+      <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
+    </EmbeddedResource>
+    <EmbeddedResource Update="PageObjet.xaml">
+      <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
+    </EmbeddedResource>
+    <EmbeddedResource Update="PageOffres.xaml">
+      <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
+    </EmbeddedResource>
+    <EmbeddedResource Update="PageOptions.xaml">
+      <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
+    </EmbeddedResource>
+    <EmbeddedResource Update="PageProfil.xaml">
+      <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
+    </EmbeddedResource>
+    <EmbeddedResource Update="PageRecherche.xaml">
+      <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
+    </EmbeddedResource>
+    <EmbeddedResource Update="PageRechercheContacts.xaml">
+      <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
+    </EmbeddedResource>
+    <EmbeddedResource Update="Properties\Resources.resx">
+      <Generator>PublicResXFileCodeGenerator</Generator>
+      <LastGenOutput>Resources.Designer.cs</LastGenOutput>
+    </EmbeddedResource>
+  </ItemGroup>
+
+  <ItemGroup>
+    <None Update="PageAjouterObjet.xaml">
+      <Generator>MSBuild:Compile</Generator>
+    </None>
+    <None Update="PageDonner.xaml">
+      <Generator>MSBuild:Compile</Generator>
+    </None>
+    <None Update="PageEchanges.xaml">
+      <Generator>MSBuild:Compile</Generator>
+    </None>
+    <None Update="PageEchangesEtOffres.xaml">
+      <Generator>MSBuild:Compile</Generator>
+    </None>
+    <None Update="PageInscription.xaml">
+      <Generator>MSBuild:Compile</Generator>
+    </None>
+    <None Update="PageMaison.xaml">
+      <Generator>MSBuild:Compile</Generator>
+    </None>
+    <None Update="PageMasterDetail.xaml">
+      <Generator>MSBuild:Compile</Generator>
+    </None>
+    <None Update="PageMenu.xaml">
+      <Generator>MSBuild:Compile</Generator>
+    </None>
+    <None Update="PageMessages.xaml">
+      <Generator>MSBuild:Compile</Generator>
+    </None>
+    <None Update="PageNouveauMessage.xaml">
+      <Generator>MSBuild:Compile</Generator>
+    </None>
+    <None Update="PageObjet.xaml">
+      <Generator>MSBuild:Compile</Generator>
+    </None>
+    <None Update="PageOffres.xaml">
+      <Generator>MSBuild:Compile</Generator>
+    </None>
+    <None Update="PageOnglets.xaml">
+      <Generator>MSBuild:Compile</Generator>
+    </None>
+    <None Update="PageOptions.xaml">
+      <Generator>MSBuild:Compile</Generator>
+    </None>
+    <None Update="PagePrincipale.xaml">
+      <Generator>MSBuild:Compile</Generator>
+    </None>
+    <None Update="PageProfil.xaml">
+      <Generator>MSBuild:Compile</Generator>
+    </None>
+    <None Update="PageRecherche.xaml">
+      <Generator>MSBuild:Compile</Generator>
+    </None>
+    <None Update="PageRechercheContacts.xaml">
+      <Generator>MSBuild:Compile</Generator>
+    </None>
+    <None Update="Trado.xaml">
+      <Generator>MSBuild:Compile</Generator>
+    </None>
+  </ItemGroup>
+
+  <ItemGroup>
+    <Folder Include="Wrappers\" />
+  </ItemGroup>
+</Project>

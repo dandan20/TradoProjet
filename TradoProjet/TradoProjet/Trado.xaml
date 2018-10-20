@@ -1,0 +1,39 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<Application xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="TradoProjet.Trado">
+    <Application.Resources>
+        <ResourceDictionary >
+            <!-- Rouge -->
+            <Color x:Key="RougeNormal">#FF0000</Color>
+            <Color x:Key="RougeTrado">#FF001E</Color>
+            <Color x:Key="RougeFonce">#8B0000</Color>
+            <Color x:Key="RougePale">#F08080</Color>
+            <!-- Vert -->
+            <Color x:Key="VertNormal">#00FF00</Color>
+            <Color x:Key="VertTrado">#00EF19</Color>
+            <Color x:Key="VertFonce">#006400</Color>
+            <Color x:Key="VertPale">#90EE90</Color>
+            <!-- Bleu -->
+            <Color x:Key="BleuNormal">#0000FF</Color>
+            <Color x:Key="BleuFonce">#00008B</Color>
+            <Color x:Key="BleuPale">#ADD8E6</Color>
+            <!-- Noir -->
+            <Color x:Key="Noir">#000000</Color>
+            <!-- Blanc -->
+            <Color x:Key="Blanc">#FFFFFF</Color>
+            <!-- Gris -->
+            <Color x:Key="GrisNormal">#A9A9A9</Color>
+            <Color x:Key="GrisFonce">#808080</Color>
+            <Color x:Key="GrisPale">#D3D3D3</Color>
+            <!-- Jaune -->
+            <Color x:Key="JauneNormal">#FFFF00</Color>
+            <Color x:Key="JauneFonce">#DEDE00</Color>
+            <Color x:Key="JaunePale">#FFFF77</Color>
+            <!-- Orange -->
+            <Color x:Key="OrangeNormal">#FFA500</Color>
+            <Color x:Key="OrangeFonce">#FF8C00</Color>
+            <Color x:Key="OrangePale">#FFCF9E</Color>
+        </ResourceDictionary>
+    </Application.Resources>
+</Application>

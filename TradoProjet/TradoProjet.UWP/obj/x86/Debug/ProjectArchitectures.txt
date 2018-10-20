@@ -1,0 +1,1 @@
+C:\Users\Maria\source\repos\TradoProjet\TradoProjet\TradoProjet.UWP\TradoProjet.UWP.csproj;x86

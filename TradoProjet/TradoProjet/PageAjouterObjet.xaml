@@ -1,0 +1,24 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="TradoProjet.PageAjouterObjet">
+    <ContentPage.Content>
+        <StackLayout>
+            <Entry x:Name="NomObjetEntry"
+                   Placeholder="Nom de l'objet"/>
+            <Picker x:Name="CategoriePicker"
+                    Title="Categorie"/>
+            <Picker x:Name="StatusPicker"
+                    Title="Status"/>
+            <Image x:Name="ObjetImage"/>
+            <Button x:Name="ChoisirImageButton"
+                    Text="Choissisez une image!"
+                    Clicked="ChoisirImageButton_Clicked"/>
+            <Entry x:Name="DetailsEntry"
+                   Placeholder="Details"/>
+            <Button x:Name="AjouterObjetOuServiceButton"
+                    Text="Ajouter l'Objet"
+                    Clicked="AjouterObjetOuServiceButton_Clicked"/>
+        </StackLayout>
+    </ContentPage.Content>
+</ContentPage>
