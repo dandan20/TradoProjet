@@ -1,12 +1,19 @@
-﻿using Plugin.Media;
+﻿//Des bibliothèques d'informations pour insérer une/des images pour l'objet à ajouter.
+using Plugin.Media;
 using Plugin.Media.Abstractions;
+
+//Utilisation d'une base de données locale pour pouvoir voir les objets sans Internet ou pour utiliser moins l'Internet.
 using SQLite;
+
+//Utilisation des models, dans ce cas-ci, le mode d'objet.
+using TradoProjet.Model;
+
+//Des bibliothèques d'informations assez fréquentes.
 using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
-using TradoProjet.Model;
 using Xamarin.Forms;
 using Xamarin.Forms.Xaml;
 
@@ -20,56 +27,81 @@ namespace TradoProjet
             InitializeComponent();
         }
 
+        //Ceci est une fonction pré-déterminée qui fonctionne seulement quand le bouton d'ajout d'objet est cliqué.
         private void AjouterObjetOuServiceButton_Clicked(object sender, EventArgs e)
         {
-            TradoObject tradoObjet = new TradoObject
+            //création d'un nouvel objet qu'on nomme tradoObjet dans l'application
+            TradoObjet tradoObjet = new TradoObjet
             {
-                name = NomObjetEntry.Text,
-                category = CategoriePicker.Title,
-                state = StatusPicker.Title,
-                details = DetailsEntry.Text
+                //nom de l'objet donné par le texte de l'entrée
+                nom = NomObjetEntry.Text,
+                //catégorie de l'objet donné par un sélectionneur de catégories
+                catégorie = CategoriePicker.Title,
+                //état de l'objet
+                état = ÉtatPicker.Title,
+                //détails de l'objet
+                détails = DetailsEntry.Text
             };
 
-            using (SQLiteConnection conn = new SQLiteConnection(Trado.DatabaseLocation))
+            //utilisation d'une base de données locale SQLite
+            using (SQLiteConnection conn = new SQLiteConnection(Trado.emplacementDeBaseDeDonnées))
             {
-                conn.CreateTable<TradoObject>();
-                int rows = conn.Insert(tradoObjet);
+                //création d'une table de TradoObjets
+                conn.CreateTable<TradoObjet>();
 
-                if (rows > 0)
+                //Insertion d'un objet dans un int (nombre entier)
+                int rangées = conn.Insert(tradoObjet);
+
+                //Si (le nombre de rangées est plus grand que 0)
+                if (rangées > 0)
                 {
-                    DisplayAlert("Success", "Object succesfully inserted!", "Ok");
+                    //Succès
+                    DisplayAlert("Succès", "L'objet a été inséré par succès!", "Ok");
                 }
+                //Sinon
                 else
                 {
-                    DisplayAlert("Failure", "Object failed to be inserted!", "Ok");
+                    //Échec
+                    DisplayAlert("Échec", "L'objet n'a pas pu etre inséré!", "Ok");
                 }
             }
         }
 
+        //Fonction async est une fonction qui doit attendre pour que la commande antérieure soit faite avant de faire la prochaine commande.
+        //Cette fonction aide à choisir une image.
         private async void ChoisirImageButton_Clicked(object sender, EventArgs e)
         {
+            //Initialiser les fonctions médiatiques
             await CrossMedia.Current.Initialize();
 
+            //Si on ne peut pas utiliser la fonctionnalité de choix de photo
             if (!CrossMedia.Current.IsPickPhotoSupported)
             {
-                await DisplayAlert("Error", "This is not supported on your device", "Ok");
+                //erreur
+                await DisplayAlert("Erreur", "Cette fonctionnalité n'est pas disponible sur votre téléphone", "Ok");
+                //retourné vers la fonction async
                 return;
             }
 
-            var mediaOptions = new PickMediaOptions()
+            var optionsDeMédia = new PickMediaOptions()
             {
+                //Image sera de taille médium
                 PhotoSize = PhotoSize.Medium
             };
 
-            var selectedImageFile = await CrossMedia.Current.PickPhotoAsync(mediaOptions);
+            //L'image sélectionné est mise dans une variable nommée imageSélectionné
+            var imageSélectionné = await CrossMedia.Current.PickPhotoAsync(optionsDeMédia);
 
-            if(selectedImageFile == null)
+            //Si l'imageSélectionné est nulle
+            if(imageSélectionné == null)
             {
-                await DisplayAlert("Error", "There was an error when trying to get your image", "Ok");
+                //Erreur
+                await DisplayAlert("Erreur", "Il y a eu une erreur d'obtention de votre image", "Ok");
                 return;
             }
 
-            ObjetImage.Source = ImageSource.FromStream(() => selectedImageFile.GetStream());
+            //L'image change à l'imageSélectionné
+            ObjetImage.Source = ImageSource.FromStream(() => imageSélectionné.GetStream());
         }
     }
 }

@@ -1,11 +1,16 @@
 ﻿<?xml version="1.0" encoding="utf-8" ?>
+<!-- Initialisation de l'application sur le côté XAML -->
 <Application xmlns="http://xamarin.com/schemas/2014/forms"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              x:Class="TradoProjet.Trado">
+  <!-- Ceci est un commentaire avec XAML, un commentaire pour votre compréhension de la programmation. -->
     <Application.Resources>
+        <!-- Ceci est un dictionaire de resources qui peut contenir des couleurs, du texte (strings), etc. -->
         <ResourceDictionary >
+            <!-- Types de ... -->
             <!-- Rouge -->
             <Color x:Key="RougeNormal">#FF0000</Color>
+            <!-- Une clé (Key) est un nom associé à la resource qui peut référencer plus tard. -->
             <Color x:Key="RougeTrado">#FF001E</Color>
             <Color x:Key="RougeFonce">#8B0000</Color>
             <Color x:Key="RougePale">#F08080</Color>

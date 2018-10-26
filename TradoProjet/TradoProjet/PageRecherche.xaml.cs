@@ -17,6 +17,7 @@ namespace TradoProjet
 			InitializeComponent ();
 		}
 
+        //Fonction activé quand la recherche est faite.
         private void RechercheSearchBar_SearchButtonPressed(object sender, EventArgs e)
         {
             //Rechercher

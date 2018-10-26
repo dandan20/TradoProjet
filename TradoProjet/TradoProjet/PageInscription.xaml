@@ -1,24 +1,35 @@
 ﻿<?xml version="1.0" encoding="utf-8" ?>
+<!-- Cette page sert à inscrire un nouveau usager -->
 <ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              x:Class="TradoProjet.PageInscription">
+    <!-- Les objets comme les boutons, etc. sont stacked (empilés) un sur 
+    l'autre. Ceci est pourquoi son nom est DispositionEmpilé (StackLayout)
+    Il y a une marge de 10 (ce nombre est une unité de proportionnalité -->
     <StackLayout VerticalOptions="CenterAndExpand"
                      Margin="10">
+        <!-- Une entrée pour le courriel avec un clavier de type courriel avec @ facilement accessible. -->
         <Entry x:Name="CourrielEntry"
                Placeholder="Courriel"
                Keyboard="Email"/>
+        <!-- Un texte d'erreur de couleur rouge pour le courriel, si nécessaire. -->
         <Label x:Name="CourrielEntryErreurLabel"
                TextColor="Red"/>
+        <!-- Une entrée pour le mot de passe de l'usager qui ne montre pas les charactères utilisés (isPassword == Vrai/True) -->
         <Entry x:Name="MotDePasseEntry"
                Placeholder="Mot de passe"
                IsPassword="True"/>
+        <!-- Un texte d'erreur de couleur rouge pour le mot de passe, si nécessaire. -->
         <Label x:Name="MotDePasseEntryErreurLabel"
                TextColor="Red"/>
+        <!-- Une entrée pour le mot de passe à confirmer qui ne montre pas les charactères utilisés -->
         <Entry x:Name="ConfirmerMotDePasseEntry"
                Placeholder="Confirmer mot de passe"
                IsPassword="True"/>
+        <!-- Un texte d'erreur de couleur rouge pour le mot de passe à confirmer, si nécessaire. -->
         <Label x:Name="ConfirmerMotDePasseEntryErreurLabel"
                TextColor="Red"/>
+        <!-- Un bouton d'inscription pour vérifier si l'usager peut être inscrit avec une fonction si le bouton a été clické. -->
         <Button x:Name="InscriptionButton"
                 Text="Inscriver moi!"
                 Clicked="InscriptionButton_Clicked"/>

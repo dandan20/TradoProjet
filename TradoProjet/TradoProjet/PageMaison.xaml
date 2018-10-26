@@ -1,8 +1,10 @@
 ﻿<?xml version="1.0" encoding="utf-8" ?>
+<!-- Page avec tous les liens aux autres pages. -->
 <ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              x:Class="TradoProjet.PageMaison">
     <StackLayout>
+        <!-- Bouton temporaire pour se rendre à la page donner -->
         <Button x:Name="DonnerButton"
                 Text="Donner"
                 Clicked="DonnerButton_Clicked"/>

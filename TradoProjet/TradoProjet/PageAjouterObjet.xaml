@@ -2,23 +2,28 @@
 <ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              x:Class="TradoProjet.PageAjouterObjet">
-    <ContentPage.Content>
-        <StackLayout>
-            <Entry x:Name="NomObjetEntry"
+    <StackLayout>
+        <!-- Entrée pour le nom de l'objet. -->
+        <Entry x:Name="NomObjetEntry"
                    Placeholder="Nom de l'objet"/>
-            <Picker x:Name="CategoriePicker"
+        <!-- Sélectionneur de catégorie d'objet. -->
+        <Picker x:Name="CategoriePicker"
                     Title="Categorie"/>
-            <Picker x:Name="StatusPicker"
-                    Title="Status"/>
-            <Image x:Name="ObjetImage"/>
-            <Button x:Name="ChoisirImageButton"
+        <!-- Sélectionneur de l'état de l'objet. -->
+        <Picker x:Name="ÉtatPicker"
+                    Title="État"/>
+        <!-- Image de l'objet (une image doit être sélectionnée) -->
+        <Image x:Name="ObjetImage"/>
+        <!-- Bouton de choix d'image. -->
+        <Button x:Name="ChoisirImageButton"
                     Text="Choissisez une image!"
                     Clicked="ChoisirImageButton_Clicked"/>
-            <Entry x:Name="DetailsEntry"
+        <!-- Entrée des détails de l'objet. -->
+        <Entry x:Name="DetailsEntry"
                    Placeholder="Details"/>
-            <Button x:Name="AjouterObjetOuServiceButton"
+        <!-- Bouton pour ajouter l'objet. -->
+        <Button x:Name="AjouterObjetButton"
                     Text="Ajouter l'Objet"
-                    Clicked="AjouterObjetOuServiceButton_Clicked"/>
-        </StackLayout>
-    </ContentPage.Content>
+                    Clicked="AjouterObjetButton_Clicked"/>
+    </StackLayout>
 </ContentPage>

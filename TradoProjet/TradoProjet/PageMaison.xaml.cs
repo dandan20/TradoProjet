@@ -17,8 +17,10 @@ namespace TradoProjet
 			InitializeComponent ();
 		}
 
+        //Bouton temporaire pour se rendre à la page donner
         private void DonnerButton_Clicked(object sender, EventArgs e)
         {
+            //Navigation à la page donner
             Navigation.PushAsync(new PageDonner());
         }
     }

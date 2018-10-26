@@ -3,30 +3,36 @@
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              xmlns:local="clr-namespace:TradoProjet"
              x:Class="TradoProjet.PagePrincipale">
-
+    
     <StackLayout VerticalOptions="CenterAndExpand"
                  Margin="10" >
+        <!-- Logo complet de Trado qui ne se déforme pas (AspectFit) -->
         <Image x:Name="TradoLogoImage"
                Aspect="AspectFit"
                HeightRequest="56"
                HorizontalOptions="FillAndExpand"
                Margin="0, 0, 0, 30"/>
+        <!-- Entrée du courriel avec un clavier de type courriel pour avoir @ proche des lettres, etc. -->
         <Entry x:Name="CourrielEntry"
                Placeholder="Courriel"
                Keyboard="Email"
                Margin="0, 0, 0, 10"/>
+        <!-- Mot de passe qui ne se voit pas -->
         <Entry x:Name="MotDePasseEntry"
                Placeholder="Mot de Passe"
                IsPassword="True"
                Margin="0, 0, 0, 10"/>
+        <!-- Bouton accéder -->
         <Button x:Name="AccederButton"
                 Text="Accéder"
                 Clicked="AccederButton_Clicked" />
+        <!-- Bouton s'inscrire -->
         <Button x:Name="InscriptionButton"
                 Text="Pas de compte? Inscrivez-vous!"
                 Clicked="InscriptionButton_Clicked"
                 BackgroundColor="White"
                 TextColor="Blue" />
+        <!-- Bouton go (accéder directement temporairement) -->
         <Button x:Name="GoButton"
                 Text="Go"
                 Clicked="GoButton_Clicked" />
