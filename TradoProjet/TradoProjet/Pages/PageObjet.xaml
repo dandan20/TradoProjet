@@ -1,0 +1,17 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<!-- Page de l'Objet -->
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="TradoProjet.PageObjet">
+    <StackLayout>
+            <!-- Titre de l'objet -->
+            <Label Text="{Binding nom}"/>
+            <!-- Image de l'objet -->
+            <Image Source="{Binding fichierDeImage}"/>
+            <Label Text="{Binding details}"/>
+            <Label Text="{Binding categorie}"/>
+            <Label Text="{Binding etat}"/>
+            <Button Text="Faire une offre"
+                    Clicked="Button_Clicked"/>
+        </StackLayout>
+</ContentPage>

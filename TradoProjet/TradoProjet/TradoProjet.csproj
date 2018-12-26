@@ -2,6 +2,9 @@
 
   <PropertyGroup>
     <TargetFramework>netstandard20</TargetFramework>
+    <AssemblyName>Trado</AssemblyName>
+    <RootNamespace></RootNamespace>
+    <ApplicationIcon />
   </PropertyGroup>
 
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|AnyCPU'">
@@ -18,10 +21,16 @@
   </ItemGroup>
 
   <ItemGroup>
+    <PackageReference Include="Algolia.Search" Version="5.2.0" />
+    <PackageReference Include="DLToolkit.Forms.Controls.FlowListView" Version="2.0.11" />
     <PackageReference Include="Microsoft.Azure.Mobile.Client" Version="4.0.2" />
+    <PackageReference Include="Sendgrid" Version="9.10.0" />
     <PackageReference Include="sqlite-net-pcl" Version="1.5.231" />
+    <PackageReference Include="Syncfusion.Xamarin.Core" Version="16.3.0.36" />
+    <PackageReference Include="Syncfusion.Xamarin.SfTreeView" Version="16.3.0.36" />
+    <PackageReference Include="WindowsAzure.Storage" Version="9.3.3" />
     <PackageReference Include="Xam.Plugin.Media" Version="4.0.1.5" />
-    <PackageReference Include="Xamarin.Forms.Maps" Version="3.2.0.871581" />
+    <PackageReference Include="Xamarin.Forms.Maps" Version="3.4.0.1008975" />
   </ItemGroup>
 
   <ItemGroup>
@@ -30,55 +39,61 @@
       <AutoGen>True</AutoGen>
       <DependentUpon>Resources.resx</DependentUpon>
     </Compile>
-    <Compile Update="Trado.xaml.cs">
+    <Compile Update="Pages\Trado.xaml.cs">
       <DependentUpon>Trado.xaml</DependentUpon>
     </Compile>
-    <Compile Update="PagePrincipale.xaml.cs">
+    <Compile Update="Pages\PagePrincipale.xaml.cs">
       <DependentUpon>PagePrincipale.xaml</DependentUpon>
     </Compile>
   </ItemGroup>
 
   <ItemGroup>
-    <EmbeddedResource Update="PageAjouterObjet.xaml">
+    <EmbeddedResource Update="Pages\PageAjouterObjet.xaml">
       <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
     </EmbeddedResource>
-    <EmbeddedResource Update="PageDonner.xaml">
+    <EmbeddedResource Update="Pages\PageAjouterOffre.xaml">
       <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
     </EmbeddedResource>
-    <EmbeddedResource Update="PageEchanges.xaml">
+    <EmbeddedResource Update="Pages\PageChoisirObjet.xaml">
       <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
     </EmbeddedResource>
-    <EmbeddedResource Update="PageEchangesEtOffres.xaml">
+    <EmbeddedResource Update="Pages\PageDonner.xaml">
       <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
     </EmbeddedResource>
-    <EmbeddedResource Update="PageInscription.xaml">
+    <EmbeddedResource Update="Pages\PageEchanges.xaml">
       <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
     </EmbeddedResource>
-    <EmbeddedResource Update="PageMaison.xaml">
+    <EmbeddedResource Update="Pages\PageInscription.xaml">
       <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
     </EmbeddedResource>
-    <EmbeddedResource Update="PageMessages.xaml">
+    <EmbeddedResource Update="Pages\PageMaison.xaml">
       <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
     </EmbeddedResource>
-    <EmbeddedResource Update="PageNouveauMessage.xaml">
+    <EmbeddedResource Update="Pages\PageMessages.xaml">
       <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
     </EmbeddedResource>
-    <EmbeddedResource Update="PageObjet.xaml">
+    <EmbeddedResource Update="Pages\PageModifierObjet.xaml">
       <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
     </EmbeddedResource>
-    <EmbeddedResource Update="PageOffres.xaml">
+    <EmbeddedResource Update="Pages\PageNouveauMessage.xaml">
       <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
     </EmbeddedResource>
-    <EmbeddedResource Update="PageOptions.xaml">
+    <EmbeddedResource Update="Pages\PageObjet.xaml">
       <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
     </EmbeddedResource>
-    <EmbeddedResource Update="PageProfil.xaml">
+    <EmbeddedResource Update="Pages\PageOffres.xaml">
       <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
     </EmbeddedResource>
-    <EmbeddedResource Update="PageRecherche.xaml">
+    <EmbeddedResource Update="Pages\PageOptions.xaml">
       <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
     </EmbeddedResource>
-    <EmbeddedResource Update="PageRechercheContacts.xaml">
+    <EmbeddedResource Update="Pages\PageProfil.xaml">
+      <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
+    </EmbeddedResource>
+    <EmbeddedResource Update="Pages\PageRecherche.xaml">
+      <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
+    </EmbeddedResource>
+    <EmbeddedResource Update="Pages\PageRechercheContacts.xaml">
       <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
     </EmbeddedResource>
     <EmbeddedResource Update="Properties\Resources.resx">

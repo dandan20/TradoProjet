@@ -1,0 +1,23 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<!-- Cette page servira à rechercher des objets, des catégories d'objets et des objets 
+    par catégories. On pourra filtrer les résulats. Tout cela viendra en temps et lieux. -->
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:cellules="clr-namespace:TradoProjet.Cellules"
+             x:Class="TradoProjet.PageRecherche">
+    <StackLayout>
+    <!-- Barre de recherche -->
+        <SearchBar x:Name="RechercheSearchBar"
+                   Placeholder="Rechercher tout..."
+                   TextChanged="RechercheSearchBar_TextChangedAsync"
+                   SearchButtonPressed="RechercheSearchBar_SearchButtonPressed"/>
+        <ListView x:Name="ObjetsListView"
+                  ItemSelected="ObjetsListView_ItemSelected">
+            <ListView.ItemTemplate>
+                <DataTemplate>
+                    <cellules:ExtendedViewCell/>
+                </DataTemplate>
+            </ListView.ItemTemplate>
+        </ListView>
+    </StackLayout>
+</ContentPage>

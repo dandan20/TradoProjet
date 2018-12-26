@@ -1,0 +1,21 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:cellules="clr-namespace:TradoProjet.Cellules"
+             x:Class="TradoProjet.Pages.PageChoisirGetObjet">
+    <ContentPage.Content>
+        <StackLayout>
+            <ListView x:Name="ListView">
+                <ListView.ItemTemplate>
+                    <DataTemplate>
+                        <cellules:ExtendedViewCell SelectedBackgroundColor="{StaticResource GrisPale}">
+                            <cellules:ExtendedViewCell.ContextActions>
+
+                            </cellules:ExtendedViewCell.ContextActions>
+                        </cellules:ExtendedViewCell>
+                    </DataTemplate>
+                </ListView.ItemTemplate>
+            </ListView>
+        </StackLayout>
+    </ContentPage.Content>
+</ContentPage>

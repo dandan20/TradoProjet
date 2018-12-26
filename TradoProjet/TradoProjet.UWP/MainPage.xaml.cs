@@ -1,4 +1,5 @@
-﻿using System;
+﻿using Syncfusion.XForms.UWP.TreeView;
+using System;
 using System.Collections.Generic;
 using System.IO;
 using System.Linq;
@@ -22,7 +23,7 @@ namespace TradoProjet.UWP
             this.InitializeComponent();
 
             string path = Path.Combine(Windows.Storage.ApplicationData.Current.LocalFolder.Path, "db.sqlite");
-
+            SfTreeViewRenderer.Init();
             LoadApplication(new Trado(path));
         }
     }

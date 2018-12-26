@@ -1,5 +1,6 @@
 ﻿using System;
 
+using Android.Util;
 using Android.App;
 using Android.Content.PM;
 using Android.Runtime;
@@ -7,13 +8,15 @@ using Android.Views;
 using Android.Widget;
 using Android.OS;
 using System.IO;
-//using Microsoft.WindowsAzure.MobileServices;
+using Microsoft.WindowsAzure.MobileServices;
+using Plugin.CurrentActivity;
 
 namespace TradoProjet.Droid
 {
     [Activity(Label = "TradoProjet", Icon = "@mipmap/icon", Theme = "@style/MainTheme", MainLauncher = true, ConfigurationChanges = ConfigChanges.ScreenSize | ConfigChanges.Orientation)]
     public class MainActivity : global::Xamarin.Forms.Platform.Android.FormsAppCompatActivity
     {
+
         protected override void OnCreate(Bundle savedInstanceState)
         {
             TabLayoutResource = Resource.Layout.Tabbar;
@@ -22,11 +25,18 @@ namespace TradoProjet.Droid
             base.OnCreate(savedInstanceState);
             global::Xamarin.Forms.Forms.Init(this, savedInstanceState);
             Xamarin.FormsMaps.Init(this, savedInstanceState);
-            //CurrentPlatform.Init();
+            CurrentPlatform.Init();
+
+            CrossCurrentActivity.Current.Init(this, savedInstanceState);
 
             string dbName = "trado_db.sqlite";
             string folderPath = System.Environment.GetFolderPath(System.Environment.SpecialFolder.Personal);
             string fullPath = Path.Combine(folderPath, dbName);
+
+            Window window = this.Window;
+            window.ClearFlags(WindowManagerFlags.TranslucentStatus);
+            window.AddFlags(WindowManagerFlags.DrawsSystemBarBackgrounds);
+            window.SetStatusBarColor(Android.Graphics.Color.Rgb(0, 160, 0));
 
             LoadApplication(new Trado(fullPath));
         }

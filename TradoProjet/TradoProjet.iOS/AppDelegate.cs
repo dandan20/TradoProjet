@@ -4,6 +4,8 @@ using System.IO;
 using System.Linq;
 
 using Foundation;
+using Microsoft.WindowsAzure.MobileServices;
+using Syncfusion.XForms.iOS.TreeView;
 //using Microsoft.WindowsAzure.MobileServices;
 using UIKit;
 
@@ -26,11 +28,20 @@ namespace TradoProjet.iOS
         {
             global::Xamarin.Forms.Forms.Init();
             Xamarin.FormsMaps.Init();
-            //CurrentPlatform.Init();
+            CurrentPlatform.Init();
+
+            SfTreeViewRenderer.Init();
 
             string dbName = "trado_db.sqlite";
             string folderPath = Path.Combine(System.Environment.GetFolderPath(System.Environment.SpecialFolder.Personal), "..", "Library");
             string fullPath = Path.Combine(folderPath, dbName);
+
+            var statusBar = UIApplication.SharedApplication.ValueForKey(new NSString("statusBar")) as UIView;
+            if (statusBar.RespondsToSelector(new ObjCRuntime.Selector("setBackgroundColor:")))
+            {
+                statusBar.BackgroundColor = UIColor.FromRGB(0, 160, 0);
+                statusBar.TintColor = UIColor.White;
+            }
 
             LoadApplication(new Trado(fullPath));
 

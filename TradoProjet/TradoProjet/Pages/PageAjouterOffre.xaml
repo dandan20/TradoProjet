@@ -1,0 +1,30 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:cellules="clr-namespace:TradoProjet.Cellules"
+             x:Class="TradoProjet.PageAjouterOffre">
+    <StackLayout>
+        <ListView x:Name="GetList">
+            <ListView.ItemTemplate>
+                <DataTemplate>
+                    <cellules:ExtendedViewCell/>
+                </DataTemplate>
+            </ListView.ItemTemplate>
+        </ListView>
+        <Button x:Name="AddGetObjectButton"
+                Text="Add Object"
+                Clicked="AddGetObjectButton_OnClicked" />
+        <Label Text="pour"
+               HeightRequest="100"/>
+        <ListView x:Name="GiveList">
+            <ListView.ItemTemplate>
+                <DataTemplate>
+                    <cellules:ExtendedViewCell/>
+                </DataTemplate>
+            </ListView.ItemTemplate>
+        </ListView>
+        <Button x:Name="AddGiveObjectButton"
+                Text="Add Object"
+                Clicked="AddGiveObjectButton_OnClicked"/>
+    </StackLayout>
+</ContentPage>

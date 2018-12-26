@@ -1,7 +1,9 @@
-﻿using System;
+﻿using Syncfusion.XForms.UWP.TreeView;
+using System;
 using System.Collections.Generic;
 using System.IO;
 using System.Linq;
+using System.Reflection;
 using System.Runtime.InteropServices.WindowsRuntime;
 using Windows.ApplicationModel;
 using Windows.ApplicationModel.Activation;
@@ -51,6 +53,15 @@ namespace TradoProjet.UWP
                 rootFrame = new Frame();
 
                 rootFrame.NavigationFailed += OnNavigationFailed;
+
+                // you'll need to add `using System.Reflection;`
+                List<Assembly> assembliesToInclude = new List<Assembly>();
+
+                //Now, add all the assemblies your app uses
+                assembliesToInclude.Add(typeof(SfTreeViewRenderer).GetTypeInfo().Assembly);
+
+                // replaces Xamarin.Forms.Forms.Init(e);        
+                Xamarin.Forms.Forms.Init(e, assembliesToInclude);
 
                 Xamarin.Forms.Forms.Init(e);
 

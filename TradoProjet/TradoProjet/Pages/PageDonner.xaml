@@ -1,0 +1,34 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<!-- Cette page sert à voir les objets qu'on est prêt à donner et à ajouter/supprimer des objets -->
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:cellules="clr-namespace:TradoProjet.Cellules"
+             x:Class="TradoProjet.PageDonner">
+    <!-- Une liste pour les objets -->
+    <StackLayout>
+        <ListView x:Name="ObjetsListView"
+                  ItemSelected="ObjetsListView_ItemSelected"
+                  HasUnevenRows="True"
+                  Header="Mes Objets">
+            <!-- Nouveau modèle d'objet (item) -->
+            <ListView.ItemTemplate>
+                <!-- Nouveau modèle de données dans l'item  (objet) -->
+                <DataTemplate>
+                    <!-- Une cellule de texte est maintenant le modèle de données. 
+                    Le texte de la cellule est le nom de l'objet et les détails 
+                    sont les détails de l'objet. -->
+                    <cellules:ExtendedViewCell SelectedBackgroundColor="{StaticResource GrisPale}">
+                        <cellules:ExtendedViewCell.ContextActions>
+                            <MenuItem Text="Edit" Clicked="ModifierObjet"/>
+                            <MenuItem Text="Delete" 
+                                      Clicked="SupprimerObjet" />
+                        </cellules:ExtendedViewCell.ContextActions>
+                    </cellules:ExtendedViewCell>
+                </DataTemplate>
+            </ListView.ItemTemplate>
+        </ListView>
+        <Button Text="Ajouter"
+                Clicked="AjouterObjetButton_Clicked"/>
+    </StackLayout>
+    <!-- Un bouton pour ajouter un objet. -->
+</ContentPage>
