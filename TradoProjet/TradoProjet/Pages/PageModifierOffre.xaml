@@ -1,0 +1,41 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms" 
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:cellules="clr-namespace:TradoProjet.Cellules"
+             x:Class="Pages.PageModifierOffre">
+    <ContentPage.ToolbarItems>
+        <ToolbarItem x:Name="SendOrSave" Text="Send" Clicked="ToolbarItem_Clicked"/>
+    </ContentPage.ToolbarItems>
+    <StackLayout>
+        <ListView x:Name="GetList">
+            <ListView.ItemTemplate>
+                <DataTemplate>
+                    <cellules:ExtendedViewCell>
+                        <cellules:ExtendedViewCell.ContextActions>
+                            <MenuItem Text="Delete" Clicked="MenuItem_Clicked" IsDestructive="True"/>
+                        </cellules:ExtendedViewCell.ContextActions>
+                    </cellules:ExtendedViewCell>
+                </DataTemplate>
+            </ListView.ItemTemplate>
+        </ListView>
+        <Button x:Name="AddGetObjectButton"
+                Text="Add Object"
+                Clicked="AddGetObjectButton_OnClicked" />
+        <Label Text="pour"
+               HeightRequest="100"/>
+        <ListView x:Name="GiveList">
+            <ListView.ItemTemplate>
+                <DataTemplate>
+                    <cellules:ExtendedViewCell>
+                        <cellules:ExtendedViewCell.ContextActions>
+                            <MenuItem Text="Delete" Clicked="MenuItem_Clicked" IsDestructive="True"/>
+                        </cellules:ExtendedViewCell.ContextActions>
+                    </cellules:ExtendedViewCell>
+                </DataTemplate>
+            </ListView.ItemTemplate>
+        </ListView>
+        <Button x:Name="AddGiveObjectButton"
+                Text="Add Object"
+                Clicked="AddGiveObjectButton_OnClicked" />
+    </StackLayout>
+</ContentPage>

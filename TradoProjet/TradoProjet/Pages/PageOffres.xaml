@@ -1,44 +1,31 @@
 ﻿<?xml version="1.0" encoding="utf-8" ?>
 <!-- Partie offres de la page à onglets (PageÉchangesEtOffres) -->
 <ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
-             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
-             x:Class="TradoProjet.PageOffres">
+            xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:cellules="clr-namespace:Cellules"
+             x:Class="Pages.PageOffres">
     <StackLayout>
-        <ListView>
+        <Grid Padding="2">
+            <Grid.RowDefinitions>
+                <RowDefinition Height="120"/>
+            </Grid.RowDefinitions>
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="0.5*"/>
+                <ColumnDefinition Width="0.5*"/>
+            </Grid.ColumnDefinitions>
+            <Button x:Name="MesOffresButton" 
+                    Text="Mes Offres"
+                    Clicked="MesOffresButton_Clicked"
+                    Grid.Column="0"/>
+            <Button x:Name="LeursOffresButton" 
+                    Text="Leurs Offres"
+                    Clicked="LeursOffresButton_Clicked"
+                    Grid.Column="1"/>
+        </Grid>
+        <ListView x:Name="OfferList">
             <ListView.ItemTemplate>
                 <DataTemplate>
-                    <Grid RowSpacing="8" ColumnSpacing="8">
-                        <Grid.RowDefinitions>
-                            <RowDefinition />
-                            <RowDefinition />
-                            <RowDefinition />
-                        </Grid.RowDefinitions>
-                        <Grid.ColumnDefinitions>
-                            <ColumnDefinition/>
-                            <ColumnDefinition/>
-                            <ColumnDefinition/>
-                        </Grid.ColumnDefinitions>
-                        <Label Grid.Row="0" Grid.Column="0"
-                               Text="{Binding }"
-                               HorizontalOptions="Center"/>
-                        <Label Grid.Row="0" Grid.Column="2"
-                               Text="{Binding }"
-                               HorizontalOptions="Center"/>
-                        <Image Grid.Row="1" Grid.Column="0"
-                               x:Name="ObjectImage1"/>
-                        <Label Grid.Row="1" Grid.Column="1"
-                               Text="pour"
-                               HorizontalOptions="Center"
-                               VerticalOptions="Center"/>
-                        <Image Grid.Row="1" Grid.Column="2"
-                               x:Name="ObjectImage2"/>
-                        <Label Grid.Row="2" Grid.Column="0"
-                               Text="{Binding }" 
-                               HorizontalOptions="Center"/>
-                        <Label Grid.Row="2" Grid.Column="2"
-                               Text="{Binding }" 
-                               HorizontalOptions="Center"/>
-                    </Grid>
+                    <cellules:OffreViewCell />
                 </DataTemplate>
             </ListView.ItemTemplate>
         </ListView>

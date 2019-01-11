@@ -8,7 +8,7 @@
 // </auto-generated>
 //------------------------------------------------------------------------------
 
-[assembly: global::Xamarin.Forms.Xaml.XamlResourceIdAttribute("TradoProjet.Pages.PageAjouterOffre.xaml", "Pages/PageAjouterOffre.xaml", typeof(global::TradoProjet.PageAjouterOffre))]
+[assembly: global::Xamarin.Forms.Xaml.XamlResourceIdAttribute("Pages.PageAjouterOffre.xaml", "Pages/PageAjouterOffre.xaml", typeof(global::TradoProjet.PageAjouterOffre))]
 
 namespace TradoProjet {
     
@@ -20,6 +20,9 @@ namespace TradoProjet {
         private global::Xamarin.Forms.ListView GetList;
         
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("Xamarin.Forms.Build.Tasks.XamlG", "0.0.0.0")]
+        private global::Xamarin.Forms.Button AddGetObjectButton;
+        
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("Xamarin.Forms.Build.Tasks.XamlG", "0.0.0.0")]
         private global::Xamarin.Forms.ListView GiveList;
         
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("Xamarin.Forms.Build.Tasks.XamlG", "0.0.0.0")]
@@ -29,6 +32,7 @@ namespace TradoProjet {
         private void InitializeComponent() {
             global::Xamarin.Forms.Xaml.Extensions.LoadFromXaml(this, typeof(PageAjouterOffre));
             GetList = global::Xamarin.Forms.NameScopeExtensions.FindByName<global::Xamarin.Forms.ListView>(this, "GetList");
+            AddGetObjectButton = global::Xamarin.Forms.NameScopeExtensions.FindByName<global::Xamarin.Forms.Button>(this, "AddGetObjectButton");
             GiveList = global::Xamarin.Forms.NameScopeExtensions.FindByName<global::Xamarin.Forms.ListView>(this, "GiveList");
             AddGiveObjectButton = global::Xamarin.Forms.NameScopeExtensions.FindByName<global::Xamarin.Forms.Button>(this, "AddGiveObjectButton");
         }

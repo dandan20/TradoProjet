@@ -1,55 +1,34 @@
 ﻿<?xml version="1.0" encoding="utf-8" ?>
 <ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
-             x:Class="TradoProjet.PageEchanges">
-    <ContentPage.Content>
-        <StackLayout>
-            <ListView>
-                <ListView.ItemTemplate>
-                    <DataTemplate>
-                        <Grid>
-                            <Grid.RowDefinitions>
-                                <RowDefinition />
-                                <RowDefinition />
-                                <RowDefinition />
-                                <RowDefinition />
-                                <RowDefinition />
-                            </Grid.RowDefinitions>
-                            <Grid.ColumnDefinitions>
-                                <ColumnDefinition />
-                                <ColumnDefinition />
-                                <ColumnDefinition />
-                            </Grid.ColumnDefinitions>
-                            <Label Grid.Row="0" Grid.Column="0"
-                               Text="{Binding }"
-                               HorizontalOptions="Center"/>
-                            <Label Grid.Row="0" Grid.Column="2"
-                               Text="{Binding }"
-                               HorizontalOptions="Center"/>
-                            <Image Grid.Row="1" Grid.Column="0"
-                               x:Name="ObjectImage1"/>
-                            <Label Grid.Row="1" Grid.Column="1"
-                               Text="pour"
-                               HorizontalOptions="Center"
-                               VerticalOptions="Center"/>
-                            <Image Grid.Row="1" Grid.Column="2"
-                               x:Name="ObjectImage2"/>
-                            <Label Grid.Row="2" Grid.Column="0"
-                               Text="{Binding }" 
-                               HorizontalOptions="Center"/>
-                            <Label Grid.Row="2" Grid.Column="2"
-                               Text="{Binding }" 
-                               HorizontalOptions="Center"/>
-                            <Label Grid.Row="4" Grid.Column="0"
-                                   Grid.ColumnSpan="3"
-                                   Text="{Binding }" />
-                            <Label Grid.Row="5" Grid.Column="0"
-                                   Grid.ColumnSpan="3"
-                                   Text="{Binding }" />
-                        </Grid>
-                    </DataTemplate>
-                </ListView.ItemTemplate>
-            </ListView>
-        </StackLayout>
-    </ContentPage.Content>
+             xmlns:cellules="clr-namespace:Cellules"
+             x:Class="Pages.PageEchanges">
+    <StackLayout>
+        <Grid Padding="2">
+            <Grid.RowDefinitions>
+                <RowDefinition Height="120"/>
+            </Grid.RowDefinitions>
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="0.5*"/>
+                <ColumnDefinition Width="0.5*"/>
+            </Grid.ColumnDefinitions>
+            <Button x:Name="EchangesButton" 
+                    Text="Echanges"
+                    Clicked="EchangesButton_Clicked"
+                    Grid.Column="0"/>
+            <Button x:Name="EchangesTermineButton" 
+                    Text="Echanges Termine"
+                    Clicked="EchangesTermineButton_Clicked"
+                    Grid.Column="1"/>
+        </Grid>
+        <ListView x:Name="EchangeList">
+            <ListView.ItemTemplate>
+                <DataTemplate>
+                    <cellules:TradeViewCell>
+                        
+                    </cellules:TradeViewCell>
+                </DataTemplate>
+            </ListView.ItemTemplate>
+        </ListView>
+    </StackLayout>
 </ContentPage>

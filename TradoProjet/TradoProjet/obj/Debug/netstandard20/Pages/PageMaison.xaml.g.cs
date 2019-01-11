@@ -8,7 +8,7 @@
 // </auto-generated>
 //------------------------------------------------------------------------------
 
-[assembly: global::Xamarin.Forms.Xaml.XamlResourceIdAttribute("TradoProjet.Pages.PageMaison.xaml", "Pages/PageMaison.xaml", typeof(global::TradoProjet.PageMaison))]
+[assembly: global::Xamarin.Forms.Xaml.XamlResourceIdAttribute("Pages.PageMaison.xaml", "Pages/PageMaison.xaml", typeof(global::TradoProjet.PageMaison))]
 
 namespace TradoProjet {
     
@@ -17,16 +17,8 @@ namespace TradoProjet {
     public partial class PageMaison : global::Xamarin.Forms.ContentPage {
         
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("Xamarin.Forms.Build.Tasks.XamlG", "0.0.0.0")]
-        private global::Xamarin.Forms.Button DonnerButton;
-        
-        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("Xamarin.Forms.Build.Tasks.XamlG", "0.0.0.0")]
-        private global::Xamarin.Forms.Button RechercheButton;
-        
-        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("Xamarin.Forms.Build.Tasks.XamlG", "0.0.0.0")]
         private void InitializeComponent() {
             global::Xamarin.Forms.Xaml.Extensions.LoadFromXaml(this, typeof(PageMaison));
-            DonnerButton = global::Xamarin.Forms.NameScopeExtensions.FindByName<global::Xamarin.Forms.Button>(this, "DonnerButton");
-            RechercheButton = global::Xamarin.Forms.NameScopeExtensions.FindByName<global::Xamarin.Forms.Button>(this, "RechercheButton");
         }
     }
 }

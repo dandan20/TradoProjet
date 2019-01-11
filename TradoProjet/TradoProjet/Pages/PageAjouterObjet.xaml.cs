@@ -30,6 +30,7 @@ namespace TradoProjet
     [XamlCompilation(XamlCompilationOptions.Compile)]
     public partial class PageAjouterObjet : ContentPage
     {
+        public Uri ImageUris;
         public string Courriel;
         public PageAjouterObjet(string courriel)
         {
@@ -51,52 +52,34 @@ namespace TradoProjet
         {
             var objet = (await Trado.serviceMobile.GetTable<TradoObjet>().Where(u => u.Nom == NomObjetEntry.Text).ToListAsync()).FirstOrDefault();
 
-            //création d'un nouvel objet qu'on nomme tradoObjet dans l'application
-            TradoObjet tradoObjet = new TradoObjet
+            if (objet != null)
             {
-                //nom de l'objet donné par le texte de l'entrée
-                Nom = NomObjetEntry.Text,
-                //catégorie de l'objet donné par un sélectionneur de catégories
-                Categorie = selectedCat,
-                //état de l'objet
-                Etat = selectedEtat,
-                //détails de l'objet
-                Details = DetailsEntry.Text,
-                //courriel de l'usager avec l'objet
-                CourrielUsager = Courriel
-            };
-
-            await Trado.serviceMobile.GetTable<TradoObjet>().InsertAsync(tradoObjet);
-
-            //utilisation d'une base de données locale SQLite
-            using (SQLiteConnection conn = new SQLiteConnection(Trado.emplacementDeBaseDeDonnées))
+                //Échec
+                await DisplayAlert("Échec", "Cet objet a déjà été utilisé.", "Ok");
+            }
+            else
             {
-                //création d'une table de TradoObjets
-                conn.CreateTable<TradoObjet>();
-
-                //Insertion d'un objet dans un int (nombre entier)
-                int rangées = conn.Insert(tradoObjet);
-
-
-                //Si (le nombre de rangées est plus grand que 0)
-                if (rangées > 0)
+                //création d'un nouvel objet qu'on nomme tradoObjet dans l'application
+                TradoObjet tradoObjet = new TradoObjet
                 {
-                    //Succès
-                    await DisplayAlert("Succès", "L'objet a été inséré par succès!", "Ok");
-                }
-                //Sinon
-                else
-                {
-                    //Échec
-                    await DisplayAlert("Échec", "L'objet n'a pas pu etre inséré!", "Ok");
-                }
+                    //nom de l'objet donné par le texte de l'entrée
+                    Nom = NomObjetEntry.Text,
+                    //catégorie de l'objet donné par un sélectionneur de catégories
+                    Categorie = selectedCat,
+                    //état de l'objet
+                    Etat = selectedEtat,
+                    //détails de l'objet
+                    Details = DetailsEntry.Text,
+                    //courriel de l'usager avec l'objet
+                    CourrielUsager = Courriel,
+                    //image de l'objet;
+                    FichierDeImage = ImageUris
+                };
+
+                await Trado.serviceMobile.GetTable<TradoObjet>().InsertAsync(tradoObjet);
             }
         }
-    /*else if (objet != null)
-    {
-        //Échec
-        await DisplayAlert("Échec", "Cet objet a déjà été utilisé.", "Ok");
-    }*/
+    
 
         //Fonction async est une fonction qui doit attendre pour que la commande antérieure soit faite avant de faire la prochaine commande.
         //Cette fonction aide à choisir une image.
@@ -143,7 +126,7 @@ namespace TradoProjet
         {
             var account = CloudStorageAccount.Parse("DefaultEndpointsProtocol=https;AccountName=trado;AccountKey=SnMiml4S5hwVqW9FJF6ZM51vakUUrhP2dDYZDU3oAo7BOpUin+q6eDQww7etuUmDa+F1N7B9TPP6PZnT24WkXw==;EndpointSuffix=core.windows.net");
             var client = account.CreateCloudBlobClient();
-            var container = client.GetContainerReference("recipientimages");
+            var container = client.GetContainerReference("images");
             await container.CreateIfNotExistsAsync();
 
             var name = Guid.NewGuid().ToString();
@@ -151,6 +134,8 @@ namespace TradoProjet
             await blockBlob.UploadFromStreamAsync(stream);
 
             string url = blockBlob.Uri.OriginalString;
+            Uri ImageUri = blockBlob.Uri;
+            ImageUris = ImageUri;
         }
 
         public string selectedCat;

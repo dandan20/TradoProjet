@@ -7,7 +7,7 @@ namespace TradoProjet.Model
 {
     public class TradoObjet
     {
-        public string Id { get; set; }
+        public string id { get; set; }
 
         //nom de l'objet, peut etre obtenu (get) et établi (set)
         public string Nom { get; set; }
@@ -19,12 +19,16 @@ namespace TradoProjet.Model
         public string Etat { get; set; }
 
         //Fichier de l'image de l'objet
-        public string FichierDeImage { get; set; }
+        public Uri FichierDeImage { get; set; }
 
         //détails de l'objet
         public string Details { get; set; }
 
         //courriel de l'usager avec l'objet
         public string CourrielUsager { get; set; }
+
+        public DateTime createdAt { get; set; }
+
+        public DateTime updatedAt { get; set; }
     }
 }

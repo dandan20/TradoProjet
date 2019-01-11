@@ -8,7 +8,7 @@
 // </auto-generated>
 //------------------------------------------------------------------------------
 
-[assembly: global::Xamarin.Forms.Xaml.XamlResourceIdAttribute("TradoProjet.Pages.PageDonner.xaml", "Pages/PageDonner.xaml", typeof(global::TradoProjet.PageDonner))]
+[assembly: global::Xamarin.Forms.Xaml.XamlResourceIdAttribute("Pages.PageDonner.xaml", "Pages/PageDonner.xaml", typeof(global::TradoProjet.PageDonner))]
 
 namespace TradoProjet {
     

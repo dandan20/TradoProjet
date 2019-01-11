@@ -8,7 +8,7 @@
 // </auto-generated>
 //------------------------------------------------------------------------------
 
-[assembly: global::Xamarin.Forms.Xaml.XamlResourceIdAttribute("TradoProjet.Pages.PagePrincipale.xaml", "Pages/PagePrincipale.xaml", typeof(global::TradoProjet.PagePrincipale))]
+[assembly: global::Xamarin.Forms.Xaml.XamlResourceIdAttribute("Pages.PagePrincipale.xaml", "Pages/PagePrincipale.xaml", typeof(global::TradoProjet.PagePrincipale))]
 
 namespace TradoProjet {
     
@@ -32,9 +32,6 @@ namespace TradoProjet {
         private global::Xamarin.Forms.Button InscriptionButton;
         
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("Xamarin.Forms.Build.Tasks.XamlG", "0.0.0.0")]
-        private global::Xamarin.Forms.Button GoButton;
-        
-        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("Xamarin.Forms.Build.Tasks.XamlG", "0.0.0.0")]
         private void InitializeComponent() {
             global::Xamarin.Forms.Xaml.Extensions.LoadFromXaml(this, typeof(PagePrincipale));
             TradoLogoImage = global::Xamarin.Forms.NameScopeExtensions.FindByName<global::Xamarin.Forms.Image>(this, "TradoLogoImage");
@@ -42,7 +39,6 @@ namespace TradoProjet {
             MotDePasseEntry = global::Xamarin.Forms.NameScopeExtensions.FindByName<global::Xamarin.Forms.Entry>(this, "MotDePasseEntry");
             AccederButton = global::Xamarin.Forms.NameScopeExtensions.FindByName<global::Xamarin.Forms.Button>(this, "AccederButton");
             InscriptionButton = global::Xamarin.Forms.NameScopeExtensions.FindByName<global::Xamarin.Forms.Button>(this, "InscriptionButton");
-            GoButton = global::Xamarin.Forms.NameScopeExtensions.FindByName<global::Xamarin.Forms.Button>(this, "GoButton");
         }
     }
 }

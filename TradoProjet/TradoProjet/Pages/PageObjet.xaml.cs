@@ -15,12 +15,13 @@ namespace TradoProjet
         TradoObjet tradoObjet = new TradoObjet();
 	    public TradoObjet[] tradoObjetGet;
 	    public TradoObjet[] tradoObjetGive;
-	    public string Courriel;
-		public PageObjet (TradoObjet objet, string courriel)
+	    public string HisCourriel;
+        public string MyCourriel;
+		public PageObjet (TradoObjet objet, string myCourriel)
 		{
 			InitializeComponent ();
-		    Courriel = courriel;
             tradoObjet = objet;
+            HisCourriel = tradoObjet.CourrielUsager;
 		    tradoObjetGet[0] = objet;
 		}
 
@@ -33,7 +34,12 @@ namespace TradoProjet
 
         private void Button_Clicked(object sender, EventArgs e)
         {
-            Navigation.PushAsync(new PageAjouterOffre(tradoObjetGet, tradoObjetGive, Courriel));
+            Navigation.PushAsync(new PageAjouterOffre(tradoObjetGet, tradoObjetGive, MyCourriel, HisCourriel));
+        }
+
+        private void Button_Clicked_1(object sender, EventArgs e)
+        {
+
         }
     }
 }

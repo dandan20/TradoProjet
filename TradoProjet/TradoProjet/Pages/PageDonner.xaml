@@ -21,7 +21,8 @@
                         <cellules:ExtendedViewCell.ContextActions>
                             <MenuItem Text="Edit" Clicked="ModifierObjet"/>
                             <MenuItem Text="Delete" 
-                                      Clicked="SupprimerObjet" />
+                                      Clicked="SupprimerObjet"
+                                      IsDestructive="True"/>
                         </cellules:ExtendedViewCell.ContextActions>
                     </cellules:ExtendedViewCell>
                 </DataTemplate>

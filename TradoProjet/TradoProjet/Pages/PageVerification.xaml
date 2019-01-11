@@ -1,0 +1,23 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="Pages.PageVerification">
+    <ContentPage.Content>
+        <StackLayout>
+            <Label Text="Code de vérification"
+                VerticalOptions="CenterAndExpand" 
+                HorizontalOptions="CenterAndExpand" />
+            <Entry x:Name="CodeOrNo"
+                   Placeholder="CODE"
+                   VerticalOptions="Center"
+                   HorizontalOptions="Center"/>
+            <Label x:Name="CodeOrNoErreur"
+                   TextColor="Red"
+                   VerticalOptions="Center"
+                   HorizontalOptions="Center"/>
+            <Button x:Name="GoButton"
+                    Text="Go!"
+                    Clicked="GoButton_Clicked"/>
+        </StackLayout>
+    </ContentPage.Content>
+</ContentPage>

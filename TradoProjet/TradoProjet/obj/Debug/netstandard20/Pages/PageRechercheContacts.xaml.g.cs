@@ -8,7 +8,7 @@
 // </auto-generated>
 //------------------------------------------------------------------------------
 
-[assembly: global::Xamarin.Forms.Xaml.XamlResourceIdAttribute("TradoProjet.Pages.PageRechercheContacts.xaml", "Pages/PageRechercheContacts.xaml", typeof(global::TradoProjet.PageRechercheContacts))]
+[assembly: global::Xamarin.Forms.Xaml.XamlResourceIdAttribute("Pages.PageRechercheContacts.xaml", "Pages/PageRechercheContacts.xaml", typeof(global::TradoProjet.PageRechercheContacts))]
 
 namespace TradoProjet {
     

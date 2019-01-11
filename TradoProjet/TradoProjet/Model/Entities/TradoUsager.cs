@@ -7,7 +7,7 @@ namespace TradoProjet.Model
     public class TradoUsager
     {
         //Id de l'usager
-        public string Id { get; set; }
+        public string id { get; set; }
 
         //nom de l'usager
         public string Nom { get; set; }
@@ -20,5 +20,13 @@ namespace TradoProjet.Model
 
         //mot de passe de l'usager
         public string MotDePasse { get; set; }
+
+        public int code { get; set; }
+
+        public bool verifie = false;
+
+        public DateTime createdAt { get; set; }
+
+        public DateTime updatedAt { get; set; }
     }
 }

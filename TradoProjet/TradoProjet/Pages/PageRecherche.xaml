@@ -12,7 +12,8 @@
                    TextChanged="RechercheSearchBar_TextChangedAsync"
                    SearchButtonPressed="RechercheSearchBar_SearchButtonPressed"/>
         <ListView x:Name="ObjetsListView"
-                  ItemSelected="ObjetsListView_ItemSelected">
+                  ItemSelected="ObjetsListView_ItemSelected"
+                  HasUnevenRows="True">
             <ListView.ItemTemplate>
                 <DataTemplate>
                     <cellules:ExtendedViewCell/>

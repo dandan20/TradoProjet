@@ -1,6 +1,9 @@
-﻿using System;
+﻿using SQLite;
+using System;
 using System.Collections.Generic;
 using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
 using TradoProjet.Model;
 using Xamarin.Forms;
 using Xamarin.Forms.Xaml;
@@ -14,6 +17,7 @@ namespace TradoProjet
 		public PageRecherche (string courriel)
 		{
 			InitializeComponent ();
+            Courriel = courriel;
 		}
         protected override async void OnAppearing()
         {

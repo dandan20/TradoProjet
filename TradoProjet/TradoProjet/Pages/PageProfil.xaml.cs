@@ -12,9 +12,11 @@ namespace TradoProjet
 	[XamlCompilation(XamlCompilationOptions.Compile)]
 	public partial class PageProfil : ContentPage
 	{
-		public PageProfil ()
+        public string Courriel;
+		public PageProfil (string courriel)
 		{
 			InitializeComponent ();
+            Courriel = courriel;
 		}
 	}
 }

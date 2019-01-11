@@ -14,11 +14,13 @@ namespace TradoProjet.Pages
 	{
 	    public TradoObjet[] tradoObjetGet;
 	    public TradoObjet[] tradoObjetGive;
-	    public string Courriel;
-		public PageChoisirGetObjet (TradoObjet[] tradoObjetGets, TradoObjet[] tradoObjetGives, string courriel)
+	    public string MyCourriel;
+        public string HisCourriel;
+		public PageChoisirGetObjet (TradoObjet[] tradoObjetGets, TradoObjet[] tradoObjetGives, string myCourriel, string hisCourriel)
 		{
 			InitializeComponent ();
-		    Courriel = courriel;
+		    MyCourriel = myCourriel;
+            HisCourriel = hisCourriel;
 		    tradoObjetGet = tradoObjetGets;
 		    tradoObjetGive = tradoObjetGives;
 		}
@@ -28,20 +30,22 @@ namespace TradoProjet.Pages
 	    {
             base.OnAppearing();
 	        liste = await Trado.serviceMobile.GetTable<TradoObjet>().ToListAsync();
-	        ListView.ItemsSource = liste;
+            var resultat = liste.Where(x => x.CourrielUsager.ToUpper().Equals(HisCourriel.ToUpper())).ToList();
+            ListView.ItemsSource = resultat;
 	    }
 
         TradoObjet objetSelectionne = new TradoObjet();
 	    private void Select_OnClicked(object sender, SelectedItemChangedEventArgs e)
 	    {
 	        objetSelectionne = (TradoObjet)e.SelectedItem;
-	        tradoObjetGive[0] = objetSelectionne;
-            Navigation.PushAsync(new PageAjouterOffre(tradoObjetGet, tradoObjetGive, Courriel));
+            int count = tradoObjetGet.Length;
+	        tradoObjetGive[count] = objetSelectionne;
+            Navigation.PushAsync(new PageAjouterOffre(tradoObjetGet, tradoObjetGive, MyCourriel, HisCourriel));
 	    }
 
 	    private void Annule_OnClicked(object sender, EventArgs e)
 	    {
-	        Navigation.PushAsync(new PageAjouterOffre(tradoObjetGet, tradoObjetGive, Courriel));
+	        Navigation.PushAsync(new PageAjouterOffre(tradoObjetGet, tradoObjetGive, MyCourriel, HisCourriel));
 	    }
 	}
 }

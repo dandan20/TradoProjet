@@ -16,8 +16,14 @@
         <Label x:Name="CourrielEntryErreurLabel"
                TextColor="Red"/>
         <!-- Une entrée pour le mot de passe de l'usager qui ne montre pas les charactères utilisés (isPassword == Vrai/True) -->
+        <Entry x:Name="NomUsagerEntry"
+               Placeholder="Nom d'usager"/>
+        <Label x:Name="NomUsagerEntryErreurLabel"
+               TextColor="Red"/>
         <Entry x:Name="PrenomEntry"
                Placeholder="Prénom"/>
+        <Label x:Name="PrenomEntryErreurLabel"
+               TextColor="Red"/>
         <Entry x:Name="MotDePasseEntry"
                Placeholder="Mot de passe"
                IsPassword="True"/>
@@ -35,5 +41,8 @@
         <Button x:Name="InscriptionButton"
                 Text="Inscriver moi!"
                 Clicked="InscriptionButton_Clicked"/>
+        <Button x:Name="VerificationButton"
+                Text="Verifie ton courriel"
+                Clicked="VerificationButton_Clicked"/>
     </StackLayout>
 </ContentPage>

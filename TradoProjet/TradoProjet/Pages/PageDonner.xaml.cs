@@ -23,11 +23,14 @@ namespace TradoProjet
         }
 
         //Cette fonction marche quand la page apparait
-        protected override void OnAppearing()
+        protected override async void OnAppearing()
         {
             base.OnAppearing();
 
-            using (SQLiteConnection conn = new SQLiteConnection(Trado.emplacementDeBaseDeDonnées))
+            var liste = await Trado.serviceMobile.GetTable<TradoObjet>().ToListAsync();
+            var resultat = liste.Where(x => x.CourrielUsager.ToUpper().Equals(Courriel.ToUpper())).ToList();
+            ObjetsListView.ItemsSource = resultat;
+            /*using (SQLiteConnection conn = new SQLiteConnection(Trado.emplacementDeBaseDeDonnées))
             {
                 //création d'une table d'objets de l'usager
                 conn.CreateTable<TradoObjet>();
@@ -35,7 +38,7 @@ namespace TradoProjet
                 var tradoObjets = conn.Table<TradoObjet>().ToList();
                 //La liste d'objets va dans la liste créé dans la partie XAML (ObjetsListView)
                 ObjetsListView.ItemsSource = tradoObjets;
-            }
+            }*/
         }
 
         //Cette fonction s'actionne quand le bouton ajouter un objet est clické
@@ -55,12 +58,7 @@ namespace TradoProjet
             var reponse = await DisplayAlert("Etes vous certain?", "Voulez-vous supprimez cet objet?", "Oui", "Non");
             if(reponse == true)
             {
-                //Supprimer
-                var button = sender as MenuItem;
-                var objet = button?.BindingContext as TradoObjet;
-                var vm = BindingContext as ObjetsModele;
-                vm?.CommandeSupprimer.Execute(objet);
-                await Trado.serviceMobile.GetTable<TradoObjet>().DeleteAsync(selectedObjet);
+                TradoObjet itemToDelete = (sender as MenuItem).BindingContext as TradoObjet;
             }
         }
 

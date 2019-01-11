@@ -5,11 +5,11 @@
              x:Class="TradoProjet.PageMaison">
     <StackLayout>
         <!-- Bouton temporaire pour se rendre à la page donner -->
-        <Button x:Name="DonnerButton"
-                Text="Donner"
-                Clicked="DonnerButton_Clicked"/>
-        <Button x:Name="RechercheButton"
-                Text="Rechercher"
-                Clicked="RechercheButton_Clicked"/>
+        <Button Clicked="DonnerButton_Clicked" Text="Donner" />
+        <Button Clicked="RechercheButton_Clicked" Text="Rechercher"/>
+        <Button Clicked="OffresButton_Clicked" Text="Offres"/>
+        <Button Clicked="EchangesButton_Clicked" Text="Echanges"/>
+        <Button Clicked="VoirButton_Clicked" Text="Voir Offres et Echanges"/>
+        <Button Clicked="ProfilButton_Clicked" Text="Profil"/>
     </StackLayout>
 </ContentPage>

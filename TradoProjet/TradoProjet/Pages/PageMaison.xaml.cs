@@ -1,4 +1,5 @@
-﻿using System;
+﻿using Pages;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -29,6 +30,26 @@ namespace TradoProjet
         private void RechercheButton_Clicked(object sender, EventArgs e)
         {
             Navigation.PushAsync(new PageRecherche(Courriel));
+        }
+
+        private void OffresButton_Clicked(object sender, EventArgs e)
+        {
+            Navigation.PushAsync(new PageOffres(Courriel));
+        }
+
+        private void EchangesButton_Clicked(object sender, EventArgs e)
+        {
+            Navigation.PushAsync(new PageEchanges(Courriel));
+        }
+
+        private void VoirButton_Clicked(object sender, EventArgs e)
+        {
+            Navigation.PushAsync(new PageVoir(Courriel));
+        }
+
+        private void ProfilButton_Clicked(object sender, EventArgs e)
+        {
+            Navigation.PushAsync(new PageProfil(Courriel));
         }
     }
 }

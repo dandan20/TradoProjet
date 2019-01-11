@@ -11,7 +11,9 @@
             <Label Text="{Binding details}"/>
             <Label Text="{Binding categorie}"/>
             <Label Text="{Binding etat}"/>
+            <Button Text="Contacter le donneur"
+                        Clicked="Button_Clicked_1" />
             <Button Text="Faire une offre"
-                    Clicked="Button_Clicked"/>
+                        Clicked="Button_Clicked"/>
         </StackLayout>
 </ContentPage>

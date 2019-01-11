@@ -8,7 +8,7 @@
 // </auto-generated>
 //------------------------------------------------------------------------------
 
-[assembly: global::Xamarin.Forms.Xaml.XamlResourceIdAttribute("TradoProjet.Pages.PageOptions.xaml", "Pages/PageOptions.xaml", typeof(global::TradoProjet.PageOptions))]
+[assembly: global::Xamarin.Forms.Xaml.XamlResourceIdAttribute("Pages.PageOptions.xaml", "Pages/PageOptions.xaml", typeof(global::TradoProjet.PageOptions))]
 
 namespace TradoProjet {
     

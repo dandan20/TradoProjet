@@ -35,7 +35,7 @@ namespace TradoProjet
             //Si le courriel et le mot de passe sont vide
             if(courrielVide || motDePasseVide)
             {
-                await DisplayAlert("Succès", courrielVide.ToString(), motDePasseVide.ToString());
+                await DisplayAlert("Erreur", "Votre courriel et/ou mot de passe est vide.", "Ok");
             }
             //Sinon
             else
@@ -46,7 +46,6 @@ namespace TradoProjet
                 //Si un courriel correspond (non-nul)
                 if(tradoUsager != null)
                 {
-                    await DisplayAlert("Succès", "Succès", "Succès");
                     //Si le mot de passe de l'usager trouvé est égal au mot de passe dans l'entrée
                     if (tradoUsager.MotDePasse == MotDePasseEntry.Text)
                     {
@@ -55,14 +54,14 @@ namespace TradoProjet
                     } else
                     {
                         //Erreur
-                        await DisplayAlert("Erreur", "Courriel ou mot de passe incorrect", "Ok");
+                        await DisplayAlert("Erreur", "Courriel ou mot de passe incorrect.", "Ok");
                     }
                 }
                 //Sinon
                 else
                 {
                     //Erreur
-                    await DisplayAlert("Erreur", "Il y a eu une erreur lors de votre identification", "Ok");
+                    await DisplayAlert("Erreur", "Ce courriel n'a pas encore été inscris.", "Ok");
                 }
             }
         }
