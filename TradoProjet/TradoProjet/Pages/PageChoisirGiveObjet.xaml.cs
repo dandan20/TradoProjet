@@ -47,5 +47,10 @@ namespace TradoProjet.Pages
 	    {
 	        Navigation.PushAsync(new PageAjouterOffre(tradoObjetGet, tradoObjetGive, MyCourriel, HisCourriel));
 	    }
-	}
+
+        private void MenuItem_Clicked(object sender, EventArgs e)
+        {
+            TradoObjet itemToDelete = (sender as MenuItem).BindingContext as TradoObjet;
+        }
+    }
 }

@@ -8,11 +8,7 @@
             <ListView x:Name="ListView">
                 <ListView.ItemTemplate>
                     <DataTemplate>
-                        <cellules:ExtendedViewCell SelectedBackgroundColor="{StaticResource GrisPale}">
-                            <cellules:ExtendedViewCell.ContextActions>
-
-                            </cellules:ExtendedViewCell.ContextActions>
-                        </cellules:ExtendedViewCell>
+                        <cellules:ExtendedViewCell SelectedBackgroundColor="{StaticResource GrisPale}" />
                     </DataTemplate>
                 </ListView.ItemTemplate>
             </ListView>

@@ -1,4 +1,5 @@
-﻿using System;
+﻿using Pages;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -14,10 +15,10 @@ namespace Cellules
 	[XamlCompilation(XamlCompilationOptions.Compile)]
 	public partial class TradeViewCell : Grid
 	{
-        private bool IsMine;
+        private int buttonsConfig = 0;
 
         public static readonly BindableProperty CourrielProperty =
-            BindableProperty.Create("Courriel", typeof(string), typeof(OffreViewCell), null);
+            BindableProperty.Create("Courriel", typeof(string), typeof(TradeViewCell), null);
 
         public string Courriel
         {
@@ -25,32 +26,25 @@ namespace Cellules
             set { SetValue(CourrielProperty, value); }
         }
 
-        public static readonly BindableProperty offreProperty =
-            BindableProperty.Create("offre", typeof(TradoÉchange), typeof(OffreViewCell), null);
+        public static readonly BindableProperty ÉchangeProperty =
+            BindableProperty.Create("Échange", typeof(TradoÉchange), typeof(TradeViewCell), null);
 
-        public TradoÉchange Offre
+        public TradoÉchange Échange
         {
-            get { return (TradoÉchange)GetValue(offreProperty); }
-            set { SetValue(offreProperty, value); }
+            get { return (TradoÉchange)GetValue(ÉchangeProperty); }
+            set { SetValue(ÉchangeProperty, value); }
         }
 
         public TradeViewCell()
 		{
 			InitializeComponent ();
 
-            NomInitial.Text = Offre.tradoObjetsGive[0].Nom;
-            Nom2.Text = Offre.tradoObjetsGet[0].Nom;
-            ImageInitial.Source = ImageSource.FromUri(Offre.tradoObjetsGive[0].FichierDeImage);
-            Image2.Source = ImageSource.FromUri(Offre.tradoObjetsGet[0].FichierDeImage);
-            int sizeGive = Offre.tradoObjetsGive.Length;
-            int sizeGet = Offre.tradoObjetsGet.Length;
-            if(Courriel == Offre.UsagerInitial.Courriel)
-            {
-                IsMine = true;
-            } else if(Courriel == Offre.Usager2.Courriel)
-            {
-                IsMine = false;
-            }
+            NomInitial.Text = Échange.tradoObjetsGive[0].Nom;
+            Nom2.Text = Échange.tradoObjetsGet[0].Nom;
+            ImageInitial.Source = ImageSource.FromUri(Échange.tradoObjetsGive[0].FichierDeImage);
+            Image2.Source = ImageSource.FromUri(Échange.tradoObjetsGet[0].FichierDeImage);
+            int sizeGive = Échange.tradoObjetsGive.Length;
+            int sizeGet = Échange.tradoObjetsGet.Length;
             if(sizeGive > 1)
             {
                 ObjetsInitial.Text = "+ " + (sizeGive - 1).ToString() + " objets";
@@ -65,50 +59,71 @@ namespace Cellules
             {
                 Objets2.Text = "";
             }
-            if(IsMine == true)
+            if (Échange.setup == false)
             {
-                ButtonAcceptOrCancel.Text = "Supprimer";
-                ButtonDeclineorModify.Text = "Modifier";
-                ButtonModify.IsVisible = false;
-            } else
-            {
-                ButtonAcceptOrCancel.Text = "Accepter";
-                ButtonDeclineorModify.Text = "Refuser";
-                ButtonModify.IsVisible = true;
+                ButtonSetUpOrConfirmOrModify.Text = "Mettre en place date, heure et lieu";
+                ButtonDeleteOrModify.Text = "Supprimer l'echange";
+                ButtonDelete.IsVisible = false;
+                buttonsConfig = 0;
             }
-		}
-
-        private void ButtonAcceptOrCancel_Clicked(object sender, EventArgs e)
-        {
-            if(IsMine == true)
+            else
             {
-                Offre.acceptationInitial = true;
-            } else
-            {
-                if (IsMine == true)
+                if (Échange.confirmed == true || Échange.confirm2 == true)
                 {
-                    //delete
-                } else if (IsMine == false)
+                    ButtonSetUpOrConfirmOrModify.Text = "Modifier date, heure et lieu";
+                    ButtonDeleteOrModify.Text = "Supprimer l'echange";
+                    ButtonDelete.IsVisible = false;
+                    buttonsConfig = 1;
+                }
+                else
                 {
-                    //NotAcceptedTrade
+                    ButtonSetUpOrConfirmOrModify.Text = "Confirmer date, heure et lieu";
+                    ButtonDeleteOrModify.Text = "Modifier date, heure et lieu";
+                    ButtonDelete.Text = "Supprimer l'echange";
+                    buttonsConfig = 2;
                 }
             }
         }
 
-        private void ButtonDeclineorModify_Clicked(object sender, EventArgs e)
+        private void ButtonSetUpOrConfirmOrModify_Clicked(object sender, EventArgs e)
         {
-            if(IsMine == true)
+            switch (buttonsConfig)
             {
-                
-            } else if (IsMine == false)
-            {
-
+                case 0:
+                    Navigation.PushAsync(new PageSetUpDTL(Échange, Courriel));
+                    break;
+                case 1:
+                    Navigation.PushAsync(new PageModifyDTL(Échange, Courriel));
+                    break;
+                case 2:
+                    Échange.confirm2 = true;
+                    break;
+                default:
+                    break;
             }
         }
 
-        private void ButtonModify_Clicked(object sender, EventArgs e)
+        private void ButtonDeleteOrModify_Clicked(object sender, EventArgs e)
         {
+            switch (buttonsConfig)
+            {
+                case 0:
+                    Trado.serviceMobile.GetTable<TradoÉchange>().DeleteAsync(Échange);
+                    break;
+                case 1:
+                    Trado.serviceMobile.GetTable<TradoÉchange>().DeleteAsync(Échange);
+                    break;
+                case 2:
+                    Navigation.PushAsync(new PageModifyDTL(Échange, Courriel));
+                    break;
+                default:
+                    break;
+            }
+        }
 
+        private void ButtonDelete_Clicked(object sender, EventArgs e)
+        {
+            Trado.serviceMobile.GetTable<TradoÉchange>().DeleteAsync(Échange);
         }
     }
 }

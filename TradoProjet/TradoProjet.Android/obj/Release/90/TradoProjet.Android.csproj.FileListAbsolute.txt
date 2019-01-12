@@ -1,0 +1,3 @@
+C:\Users\Administrator\Source\Repos\TradoProjet2\TradoProjet\TradoProjet.Android\obj\Release\90\MonoAndroid,Version=v9.0.AssemblyAttributes.cs
+C:\Users\Administrator\Source\Repos\TradoProjet2\TradoProjet\TradoProjet.Android\obj\Release\90\TradoProjet.Android.nuget.stamp
+C:\Users\Administrator\Source\Repos\TradoProjet2\TradoProjet\TradoProjet.Android\obj\Release\90\TradoProjet.Android.csprojAssemblyReference.cache

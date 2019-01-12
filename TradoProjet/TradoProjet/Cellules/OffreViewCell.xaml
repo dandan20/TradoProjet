@@ -15,8 +15,12 @@
         <RowDefinition Height="Auto"/>
         <RowDefinition Height="Auto"/>
     </Grid.RowDefinitions>
-    <Label x:Name="NomInitial"/>
-    <Label x:Name="Nom2"/>
+    <Label x:Name="NomInitial"
+           Grid.Column="0"
+           Grid.Row="0"/>
+    <Label x:Name="Nom2"
+           Grid.Column="2"
+           Grid.Row="0"/>
     <Image x:Name="ImageInitial"
            Grid.Column="0"
            Grid.Row="1"/>

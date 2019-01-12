@@ -27,7 +27,7 @@ namespace Cellules
         }
 
         public static readonly BindableProperty offreProperty =
-            BindableProperty.Create("offre", typeof(TradoÉchange), typeof(OffreViewCell), null);
+            BindableProperty.Create("Offre", typeof(TradoÉchange), typeof(OffreViewCell), null);
 
         public TradoÉchange Offre
         {
@@ -83,7 +83,7 @@ namespace Cellules
         {
             if(IsMine == true)
             {
-                //Delete
+                Trado.serviceMobile.GetTable<TradoÉchange>().DeleteAsync(Offre);
             } else
             {
                 Offre.acceptation2 = true;
@@ -97,7 +97,7 @@ namespace Cellules
                 Navigation.PushAsync(new PageModifierOffre(Courriel, Offre));
             } else
             {
-                //Decline = offer goes into failed and declined
+                Trado.serviceMobile.GetTable<TradoÉchange>().DeleteAsync(Offre);
             }
         }
 

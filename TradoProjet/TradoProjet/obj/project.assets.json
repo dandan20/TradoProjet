@@ -5158,11 +5158,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Users\\Administrator\\source\\repos\\TradoProjet\\TradoProjet\\TradoProjet\\TradoProjet.csproj",
+      "projectUniqueName": "C:\\Users\\Administrator\\Source\\Repos\\TradoProjet2\\TradoProjet\\TradoProjet\\TradoProjet.csproj",
       "projectName": "Trado",
-      "projectPath": "C:\\Users\\Administrator\\source\\repos\\TradoProjet\\TradoProjet\\TradoProjet\\TradoProjet.csproj",
+      "projectPath": "C:\\Users\\Administrator\\Source\\Repos\\TradoProjet2\\TradoProjet\\TradoProjet\\TradoProjet.csproj",
       "packagesPath": "C:\\Users\\Administrator\\.nuget\\packages\\",
-      "outputPath": "C:\\Users\\Administrator\\source\\repos\\TradoProjet\\TradoProjet\\TradoProjet\\obj\\",
+      "outputPath": "C:\\Users\\Administrator\\Source\\Repos\\TradoProjet2\\TradoProjet\\TradoProjet\\obj\\",
       "projectStyle": "PackageReference",
       "fallbackFolders": [
         "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder"

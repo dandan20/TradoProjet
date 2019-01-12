@@ -6908,6 +6908,7 @@
       "Trado >= 1.0.0",
       "WindowsAzure.Storage >= 9.3.3",
       "Xam.Plugin.Media >= 4.0.1.5",
+      "Xamarin.Android.Support.Animated.Vector.Drawable >= 28.0.0",
       "Xamarin.Android.Support.Design >= 28.0.0",
       "Xamarin.Android.Support.v4 >= 28.0.0",
       "Xamarin.Android.Support.v7.AppCompat >= 28.0.0",
@@ -6925,11 +6926,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Users\\Administrator\\source\\repos\\TradoProjet\\TradoProjet\\TradoProjet.Android\\TradoProjet.Android.csproj",
+      "projectUniqueName": "C:\\Users\\Administrator\\source\\repos\\TradoProjet2\\TradoProjet\\TradoProjet.Android\\TradoProjet.Android.csproj",
       "projectName": "TradoProjet.Android",
-      "projectPath": "C:\\Users\\Administrator\\source\\repos\\TradoProjet\\TradoProjet\\TradoProjet.Android\\TradoProjet.Android.csproj",
+      "projectPath": "C:\\Users\\Administrator\\source\\repos\\TradoProjet2\\TradoProjet\\TradoProjet.Android\\TradoProjet.Android.csproj",
       "packagesPath": "C:\\Users\\Administrator\\.nuget\\packages\\",
-      "outputPath": "C:\\Users\\Administrator\\source\\repos\\TradoProjet\\TradoProjet\\TradoProjet.Android\\obj\\",
+      "outputPath": "C:\\Users\\Administrator\\source\\repos\\TradoProjet2\\TradoProjet\\TradoProjet.Android\\obj\\",
       "projectStyle": "PackageReference",
       "skipContentFileWrite": true,
       "configFilePaths": [
@@ -6946,8 +6947,8 @@
       "frameworks": {
         "monoandroid90": {
           "projectReferences": {
-            "C:\\Users\\Administrator\\source\\repos\\TradoProjet\\TradoProjet\\TradoProjet\\TradoProjet.csproj": {
-              "projectPath": "C:\\Users\\Administrator\\source\\repos\\TradoProjet\\TradoProjet\\TradoProjet\\TradoProjet.csproj"
+            "C:\\Users\\Administrator\\source\\repos\\TradoProjet2\\TradoProjet\\TradoProjet\\TradoProjet.csproj": {
+              "projectPath": "C:\\Users\\Administrator\\source\\repos\\TradoProjet2\\TradoProjet\\TradoProjet\\TradoProjet.csproj"
             }
           }
         }
@@ -6967,6 +6968,10 @@
           "Xam.Plugin.Media": {
             "target": "Package",
             "version": "[4.0.1.5, )"
+          },
+          "Xamarin.Android.Support.Animated.Vector.Drawable": {
+            "target": "Package",
+            "version": "[28.0.0, )"
           },
           "Xamarin.Android.Support.Design": {
             "target": "Package",

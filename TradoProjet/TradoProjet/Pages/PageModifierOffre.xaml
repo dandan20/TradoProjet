@@ -3,9 +3,6 @@
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              xmlns:cellules="clr-namespace:TradoProjet.Cellules"
              x:Class="Pages.PageModifierOffre">
-    <ContentPage.ToolbarItems>
-        <ToolbarItem x:Name="SendOrSave" Text="Send" Clicked="ToolbarItem_Clicked"/>
-    </ContentPage.ToolbarItems>
     <StackLayout>
         <ListView x:Name="GetList">
             <ListView.ItemTemplate>
@@ -37,5 +34,8 @@
         <Button x:Name="AddGiveObjectButton"
                 Text="Add Object"
                 Clicked="AddGiveObjectButton_OnClicked" />
+    <Button x:Name="SendOrSave"
+            Text="Send"
+            Clicked="ToolbarItem_Clicked"/>
     </StackLayout>
 </ContentPage>

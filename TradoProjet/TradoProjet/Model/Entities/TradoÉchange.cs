@@ -24,6 +24,16 @@ namespace TradoProjet.Model
 
         public bool termine = false;
 
+        public bool setup = false;
+
+        public bool confirmInitial = false;
+
+        public bool confirm2 = false;
+
+        public bool confirmed = false;
+
+        public TradoUsager confirmUser { get; set; }
+
         public DateTime createdAt { get; set; }
 
         public DateTime updatedAt { get; set; }
@@ -36,6 +46,14 @@ namespace TradoProjet.Model
             } else
             {
                 acceptation = false;
+            }
+
+            if(confirmInitial == true && confirm2 == true)
+            {
+                confirmed = true;
+            } else
+            {
+                confirmed = false;
             }
         }
     }

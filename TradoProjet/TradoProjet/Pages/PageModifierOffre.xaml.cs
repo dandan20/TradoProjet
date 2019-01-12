@@ -42,7 +42,7 @@ namespace Pages
             }
 		}
 
-        private void ToolbarItem_Clicked()
+        private void ToolbarItem_Clicked(object sender, EventArgs e)
         {
             //if isMine save else send
             if(isMine == true)
